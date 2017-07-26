@@ -15,7 +15,7 @@ export default new Router({
       component: DemoHome
     },
     {
-      path: '/contact/:id?',
+      path: '/contact',
       name: 'Contact',
       component: DemoContact,
       children: [

@@ -14,7 +14,7 @@
             <router-link to="/">首页</router-link>
           </span>
           <span class="nav-btn">
-            <router-link to="/about">关于</router-link>
+            <router-link :to="{name:'Home'}">关于</router-link>
           </span>
           <span class="nav-btn">
             <router-link to="/contact">联系方式</router-link>
@@ -33,6 +33,8 @@
           </span>
         </div>
       </div>
+      <button @click="btnGo({path: '/about'})">跳转到about页面</button>
+      <button @click="btnContact()">跳转到contact页面</button>
     </div>
   </div>
 </template>
@@ -43,6 +45,15 @@
     data:function () {
       return {
         'nav-btn': 'nav-btn'
+      }
+    },
+    methods: {
+      btnGo(Objpath) {
+        // 编程似跳转页面
+        this.$router.push(Objpath)
+      },
+      btnContact() {
+        this.$router.push({name: 'Contact',params: {id: 6000}})
       }
     }
   })
